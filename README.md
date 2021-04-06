@@ -87,7 +87,7 @@
 
 #### Conclusion and Further Improvement 
 
-1. Using **AWS Lambda**, **Cloud9 IDE**, **SQS**, **Comprehend**, **IAM**,  **CloudWatch Timer**, and **DynamoDB** database, I have successfully constructed a data engineering pipeline that controls the production of data, transmission of the data, and sentiment analysis of the data, but failed to store the data properly in the S3 bucket. The issue has been found to be the malfunctioning of the function `s3_resource = botos.resource("s3")` through the log information of the consumer function. Further debugging work will focus on this part. 
+1. Using **AWS Lambda**, **SAM**, **Cloud9 IDE**, **SQS**, **Comprehend**, **IAM**,  **CloudWatch Timer**, and **DynamoDB** database, I have successfully constructed a data engineering pipeline that controls the production of data, transmission of the data, and sentiment analysis of the data, but failed to store the data properly in the S3 bucket. The issue has been found to be the malfunctioning of the function `s3_resource = botos.resource("s3")` through the log information of the consumer function. Further debugging work will focus on this part. 
 
 2. Essential points to run the code successfully: **Python version** must be set to 3.7. Create a virtual environment in Cloud9 IDE to avoid various potential issues like permission issues and python package installation issues. The **virtual environment** could be established using the following commands: 
 
