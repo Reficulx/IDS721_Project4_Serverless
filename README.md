@@ -1,10 +1,7 @@
-### Build Data Engineering Pipelines with AWS Lambda Step by Step 
-
-
-
 ![img_1](img/Serverless_Pipeline.png)
 
 
+### Build Data Engineering Pipelines with AWS Lambda Step by Step  
 
 #### General Operations in Cloud9
 
