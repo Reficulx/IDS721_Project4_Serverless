@@ -91,7 +91,7 @@
 
 2. Essential points to run the code successfully: **Python version** must be set to 3.7. Create a virtual environment in Cloud9 IDE to avoid various potential issues like permission issues and python package installation issues. The **virtual environment** could be established using the following commands: 
 
-   1. Create the virtual environment: python3 -m venv ~/.venv`.
+   1. Create the virtual environment: `python3 -m venv ~/.venv`.
    2. Activate the virtual environment: `source ~/.venv/bin/activate`
    3. Deactivate the virtual environment: `deactivate` 
 
