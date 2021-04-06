@@ -2,7 +2,7 @@
 
 
 
-![img_1]("img/Serverless\ Pipeline.png")
+![img_1]("img/Serverless_Pipeline.png")
 
 
 
