@@ -61,13 +61,13 @@
 
 #### Build the Pipeline 
 
-1. Create a table using DynamoDB, which could scale automatically. It stores all the data to be analyzed sentimentally. The data in this table will be pull by the producer Lambda function. 
+1. Create a **table** using **DynamoDB**, which could scale automatically. It stores all the data to be analyzed sentimentally. The data in this table will be pull by the producer Lambda function. 
 
    This table should be called "fang1" according to the code, which should be consistent with the name for the DynamoDB table in the consumer function code. 
 
-2. Write the producer Lamda function through the Cloud9 IDE, and deploy it to the cloud. The code for `producer` function is shown in the repo. The method to create the lambda function is shown above. A CloudWatch Timer serves as a trigger and calls this function at a rate of once per minute. And this functions pulls the data from a `DynamoDB` table and send it to a simple queue created by the AWS Simple Queue Service. 
+2. Write the **producer Lamda function** through the Cloud9 IDE, and deploy it to the cloud. The code for `producer` function is shown in the repo. The method to create the lambda function is shown above. A CloudWatch Timer serves as a trigger and calls this function at a rate of once per minute. And this functions pulls the data from a `DynamoDB` table and send it to a simple queue created by the AWS Simple Queue Service. 
 
-3. Create a Simple Queue Service called "producer" through the AWS management console. Its function is to receive data from the producer Lambda function and send data to the consumer Lambda function as a trigger. The name of this SQS is very important. It must be consistent with the name in the producer code, which is "producer" in this case. 
+3. Create a **Simple Queue Service** called "producer" through the AWS management console. Its function is to receive data from the producer Lambda function and send data to the consumer Lambda function as a trigger. The name of this SQS is very important. It must be consistent with the name in the producer code, which is "producer" in this case. 
 
    Here is a picture of the queue receiving data from the producer function. 
    ![img_2](img/Receive_From_Producer.png)
@@ -75,7 +75,7 @@
 
    By this step, we have already set up the CloudWatch Timer, Producer Lambda Function, DynamoDB database, and Simple Queue Service. Next, we will build the consumer lambda function. 
 
-4. Write the consumer Lamda function through the Cloud9 IDE, and deploy it to the cloud. The code for `producer` function is shown in the repo. The method to create the lambda function is shown above. 
+4. Write the **consumer Lamda function** through the Cloud9 IDE, and deploy it to the cloud. The code for `producer` function is shown in the repo. The method to create the lambda function is shown above. 
 
    This function receives the data send by the simple queue, and analyze the sentiment of the data received from the simple queue through AWS Comprehend. Finally, it writes the sentiment analysis result into a csv file and store the result in a S3 bucket. 
 
@@ -87,7 +87,7 @@
 
 #### Conclusion and Further Improvement 
 
-1. Using AWS Lambda, Cloud9 IDE, SQS, Comprehend, IAM,  CloudWatch Timer, and DynamoDB database, I have successfully constructed a data engineering pipeline that controls the production of data, transmission of the data, and sentiment analysis of the data, but failed to store the data properly in the S3 bucket. The issue has been found to be the malfunctioning of the function `s3_resource = botos.resource("s3")` through the log information of the consumer function. Further debugging work will focus on this part. 
+1. Using **AWS Lambda**, **Cloud9 IDE**, **SQS**, **Comprehend**, **IAM**,  **CloudWatch Timer**, and **DynamoDB** database, I have successfully constructed a data engineering pipeline that controls the production of data, transmission of the data, and sentiment analysis of the data, but failed to store the data properly in the S3 bucket. The issue has been found to be the malfunctioning of the function `s3_resource = botos.resource("s3")` through the log information of the consumer function. Further debugging work will focus on this part. 
 
 2. Essential points to run the code successfully: **Python version** must be set to 3.7. Create a virtual environment in Cloud9 IDE to avoid various potential issues like permission issues and python package installation issues. The **virtual environment** could be established using the following commands: 
 
