@@ -96,3 +96,4 @@
    3. Deactivate the virtual environment: `deactivate` 
 
    Finally, **Log information** is very helpful in determining the bugs in the code. 
+3. It is always good to run some tests after you setup an application or an environment. For example, you could test the SAM app using `sam local invoke` or `sam local start-api`. 
